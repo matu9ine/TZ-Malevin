@@ -7,7 +7,7 @@ export default registerAs('database', () => {
       url: process.env.DATABASE_URL,
       ssl: { rejectUnauthorized: false },
       autoLoadEntities: true,
-      synchronize: process.env.NODE_ENV !== 'production',
+      synchronize: true,
       logging: process.env.NODE_ENV === 'development',
     };
   }
@@ -20,7 +20,7 @@ export default registerAs('database', () => {
     password: process.env.DB_PASSWORD || 'postgres',
     database: process.env.DB_NAME || 'work_journal',
     autoLoadEntities: true,
-    synchronize: process.env.NODE_ENV !== 'production',
+    synchronize: true,
     logging: process.env.NODE_ENV === 'development',
   };
 });
